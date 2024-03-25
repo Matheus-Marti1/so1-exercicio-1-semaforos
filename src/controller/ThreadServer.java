@@ -132,7 +132,7 @@ public class ThreadServer extends Thread {
     private void calcTransacao(double tempoTransacao) {
         System.out.println("Thread #" + threadId + " está fazendo uma transação durante " + tempoTransacao + " s., aguarde...");
         try {
-            sleep(1000);
+            sleep((long) (tempoTransacao * 1000));
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
